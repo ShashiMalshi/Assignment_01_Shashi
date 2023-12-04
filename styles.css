@@ -18,6 +18,19 @@ button:hover {
   text-align: center;
 }
 
+/*featute 4 */
+
+.fontColor {
+  position: relative;
+}
+
+.colorPalette {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
 #editArea {
   max-width: 820px;
   margin: 0 auto;

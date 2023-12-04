@@ -12,3 +12,15 @@ function underline() {
 function italic() {
   document.execCommand('italic',true,null)
 }
+
+//feature 4 - font color function
+
+function toggleColorPalette() {
+  var colorPalette = document.getElementById('selectColor');
+  colorPalette.style.display = (colorPalette.style.display === 'none' || colorPalette.style.display === '') ? 'block' : 'none';
+}
+
+function changeTextColor(color) {
+  document.execCommand('foreColor', false, color);
+  toggleColorPalette(); 
+}
