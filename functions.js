@@ -44,3 +44,42 @@ function right() {
 function justify() {
   editArea.style.textAlign = 'justify';
 }
+
+//feature 6 - undo and redo function
+
+var pastState = [];
+var now = 0;
+
+function saveState(){
+  pastState = pastState.slice(0, now + 1); 
+  pastState.push({
+    content: document.getElementById('editArea').innerHTML,
+    alignment: document.getElementById('editArea').style.textAlign
+  });
+  now++;
+}
+
+function updateState(){
+  document.getElementById('editArea').innerHTML = pastState[now].content;
+  document.getElementById('editArea').style.textAlign = pastState[now].alignment;
+}
+
+function undo(){
+  if (now > 0){
+    now--;
+    updateState();
+  }
+}
+
+function redo(){
+  if (now < pastState.length - 1){
+    now++;
+    updateState();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('editArea').addEventListener('input', function(){
+    saveState();
+  });
+});
