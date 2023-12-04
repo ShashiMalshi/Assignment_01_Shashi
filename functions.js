@@ -24,3 +24,23 @@ function changeTextColor(color) {
   document.execCommand('foreColor', false, color);
   toggleColorPalette(); 
 }
+
+//feature 5 - text alignments functions
+
+const textEditor = document.getElementById('editArea');
+
+function left() {
+  editArea.style.textAlign = 'left';
+}
+
+function center() {
+  editArea.style.textAlign = 'center';
+}
+
+function right() {
+  editArea.style.textAlign = 'right';
+}
+
+function justify() {
+  editArea.style.textAlign = 'justify';
+}
